@@ -14,8 +14,8 @@ type Collection struct {
   obj_type        reflect.Type
 }
 
-func get_collection(c interface{}) Collection {
-  return Collection{collection_name_from(c), c, reflect.TypeOf(c)}
+func GetCollection(c interface{}) *Collection {
+  return &Collection{collection_name_from(c), c, reflect.TypeOf(c)}
 }
 
 func collection_name_from(result interface{}) string {
@@ -31,24 +31,22 @@ func with_collection(collection_name string, next func(*mgo.Collection) error) e
   return next(col)
 }
 
-func (c Collection) New(new_obj interface{}) Document {
+func (c *Collection) New(new_obj interface{}) Document {
   doc := Document{D: new_obj}
   doc.Set("Document", doc)
   return doc
 }
 
-func (c Collection) Create(new_obj interface{}, v *revel.Validation) bool {
+func (c *Collection) Create(new_obj interface{}, v *revel.Validation) bool {
   doc := c.New(new_obj)
   doc.Validate(v)
-
   if v.HasErrors() {
     return false
   }
-
   return doc.Save()
 }
 
-func (col Collection) Find(result, q interface{}) error {
+func (col *Collection) Find(result, q interface{}) error {
   err := with_collection(col.collection_name, func(c *mgo.Collection) error {
     // if the id is given just query by the id
     if query_type := reflect.TypeOf(q).Kind().String(); query_type == "string" {
@@ -61,7 +59,7 @@ func (col Collection) Find(result, q interface{}) error {
   return err
 }
 
-func (col Collection) Where(results, q interface{}, options map[string]int) error {
+func (col *Collection) Where(results, q interface{}, options map[string]int) error {
   err := with_collection(col.collection_name, func(c *mgo.Collection) error {
     fn := c.Find(q)
     if skip, ok := options["skip"]; ok {
@@ -81,6 +79,19 @@ func (col Collection) Where(results, q interface{}, options map[string]int) erro
   return err
 }
 
-func (c Collection) All(result interface{}, options map[string]int) error {
+func (c *Collection) All(result interface{}, options map[string]int) error {
   return c.Where(result, nil, options)
+}
+
+func (col *Collection) Delete(q interface{}) error {
+  return with_collection(col.collection_name, func(c *mgo.Collection) error {
+    return c.Remove(q)
+  })
+}
+
+func (col *Collection) DeleteAll(q interface{}) error {
+  return with_collection(col.collection_name, func(c *mgo.Collection) error {
+    _, err := c.RemoveAll(q)
+    return err
+  })
 }

@@ -17,8 +17,8 @@ type Signature struct {
   Created_at  time.Time
 }
 
-func Signatures() Collection{
-  return get_collection(Signature{})
+func Signatures() *Collection{
+  return GetCollection(Signature{})
 }
 
 func (signature *Signature) Validate(v *revel.Validation) {

@@ -27,16 +27,17 @@
 
       canvas_el.on("clear", function(){
         canvas_el.get(0).getContext('2d').clearRect(0,0, canvas_el.attr('width'), canvas_el.attr('height'))
-        save()
+        save(true)
       })
 
       canvas_el.on("change_color", function(event, color){
         canvas.strokeStyle = color;
       })
       
-      function save(event, return_data){
-        canvas_el.data("png", canvas_el.get(0).toDataURL('image/png'));
-        $("[data-behaviour='canvas_save']").val(canvas_el.get(0).toDataURL('image/png'));
+      function save(clear){
+        data = clear ? "" : canvas_el.get(0).toDataURL('image/png')
+        canvas_el.attr("data-png", data);
+        $("[data-behaviour='canvas_save']").val(data);
       }
 
       var is_drawing = false;
@@ -45,6 +46,8 @@
           is_drawing = true
           canvas.beginPath()
           canvas.moveTo(get_x(event, is_touch), get_y(event, is_touch))
+          canvas.lineTo(get_x(event, is_touch)+1, get_y(event, is_touch)+1)
+          canvas.stroke();
         }
       }
       function _end(is_touch){

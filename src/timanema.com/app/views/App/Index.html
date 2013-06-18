@@ -90,10 +90,12 @@
 </div>
 
 {{range .signatures}}
-  <img src="/signatures/{{.Id.Hex}}">
-  {{.Word}}
-  {{.Name}}
-  {{.Comment}}
+  <div class="signature">
+    <img src="/signatures/{{.Id.Hex}}">
+    {{.Word}}
+    {{.Name}}
+    {{.Comment}}
+  </div>
 {{end}}
 
 {{template "footer.html" .}}

@@ -64,3 +64,15 @@ func (doc *Document) Update(changes interface{}) bool {
   })
   return err == nil
 }
+
+func (doc *Document) Delete() bool {
+  collection_name := collection_name_from(doc.D)
+  err := with_collection(collection_name, func(c *mgo.Collection) (err error) {
+    if doc.IsPersisted() {
+      err = c.RemoveId(doc.Id())
+    }
+    doc.LastError = err
+    return
+  })
+  return err == nil
+}
