@@ -1,0 +1,133 @@
+#sidebar {
+  padding:25px;
+}
+
+h1{
+  font-family: impact;
+}
+
+.subline{
+  font-size: 11px;
+  font-style: italic;
+  opacity: 0.5;
+  font-family: arial, sans-serif;
+}
+
+.profile {
+  -webkit-border-radius: 100px;
+  -moz-border-radius: 100px;
+  border-radius: 100px;
+}
+
+.icon{
+  background: url(/public/images/spritesheet.png) 0 0 no-repeat;
+  background-size:160px 32px;
+  width: 32px;
+  height: 32px;
+}
+
+.twitter{background-position: 0 0;}
+.github{background-position: -32px 0;}
+.coderwall{background-position: -64px 0;}
+.email{background-position: -96px 0;}
+.linkedin{background-position: -128px 0;}
+
+#coderwall_badges{
+  display: inline-block;
+}
+
+a {
+  color: black;
+  font-size: 20px;
+}
+
+a:hover {
+  color: black
+  text-decoration: none;
+}
+
+#signature {
+  position: absolute;
+  left: 300px;
+  top: 20px;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.sig_inputs{
+  margin-left: 20px;
+}
+
+.sig_inputs input[type='text'], .sig_inputs input[type='email'],
+.sig_inputs textarea{
+  width: 90%;
+}
+
+input[type='text'], input[type='email'], input[type='password'] {
+  border: none;
+  border-bottom: 3px solid #e6e5e0;
+  padding-top: 10px;
+  background-color:#FFFFFF;
+}
+
+input[type='text']:focus, input[type='email']:focus, input[type='password']:focus {
+  outline: none;
+}
+
+#draw_something {
+  cursor:crosshair;
+  margin: 15px;
+  -webkit-box-shadow: 0px 0px 30px rgba(50, 50, 50, 1);
+  -moz-box-shadow:    0px 0px 30px rgba(50, 50, 50, 1);
+  box-shadow:         0px 0px 30px rgba(50, 50, 50, 1);
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+#draw_something.mousedown{
+  cursor: crosshair;
+}
+
+.canvas_controls {
+  position: absolute;
+  margin-top: 25px;
+  margin-left: 25px;
+}
+
+.canvas_controls, .word_controls{
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.word_controls {
+  position: absolute;
+  margin-top: 380px;
+  margin-left: 95px;
+  font-family: impact;
+  font-size: 20px;
+  background-color: white;
+}
+
+#clear_signature {
+  background: url(/public/images/trash-icon.png) 0 0 no-repeat;
+  background-size: 32px 32px;
+}
+
+.change_color, #clear_signature {
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+  border: thin solid gray;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+
