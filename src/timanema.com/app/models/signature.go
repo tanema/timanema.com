@@ -3,11 +3,12 @@ package models
 import (
   "github.com/robfig/revel"
   "labix.org/v2/mgo/bson"
+  "github.com/tanema/mgorx"
   "time"
 )
 
 type Signature struct {
-  Document    "-"
+  mgorx.Document    "-"
   Id          bson.ObjectId "_id,omitempty"
   Name        string
   Email       string
@@ -17,8 +18,8 @@ type Signature struct {
   Created_at  time.Time
 }
 
-func Signatures() *Collection{
-  return GetCollection(Signature{})
+func Signatures() *mgorx.Collection{
+  return mgorx.GetCollection(Signature{})
 }
 
 func (signature *Signature) Validate(v *revel.Validation) {

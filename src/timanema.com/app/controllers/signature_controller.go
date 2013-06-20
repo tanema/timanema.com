@@ -6,11 +6,11 @@ import (
   "timanema.com/app/mimes"
 )
 
-type Signature struct {
+type SignatureController struct {
 	*revel.Controller
 }
 
-func (c Signature) Create(signature models.Signature) revel.Result {
+func (c SignatureController) Create(signature models.Signature) revel.Result {
   saved := models.Signatures().Create(&signature, c.Validation)
   if !saved || c.Validation.HasErrors() {
     return c.Render(signature)
@@ -18,7 +18,7 @@ func (c Signature) Create(signature models.Signature) revel.Result {
   return c.Redirect(App.Index)
 }
 
-func (c Signature) Show(id string) revel.Result {
+func (c SignatureController) Show(id string) revel.Result {
   var s models.Signature
   models.Signatures().Find(&s, id)
 	return mimes.Png(s.Png)

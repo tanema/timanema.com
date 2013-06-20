@@ -3,6 +3,7 @@ package controllers
 import (
   "github.com/robfig/revel"
   "timanema.com/app/models"
+  "labix.org/v2/mgo/bson"
 )
 
 type App struct {
@@ -11,6 +12,7 @@ type App struct {
 
 func (c App) Index() revel.Result {
   signatures := []models.Signature{}
-  models.Signatures().Where(&signatures, nil, nil)
-	return c.Render(signatures)
+  models.Signatures().All(&signatures, bson.M{"order": "-_id"})
+  count, _ := models.Signatures().Count(nil)
+	return c.Render(signatures, count)
 }

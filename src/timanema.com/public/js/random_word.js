@@ -6,10 +6,15 @@ $(function(){
                     "hasDictionaryDef=true&maxLength=12&" +
                     "api_key=" + api_key;
 
-  window.new_word = function (){
+  window.new_word = function (e){
     $.get(api_url, function(data){
       $("[data-word]").text(data.word).val(data.word)
     })
+    if(e){
+      e.stopPropagation();
+      e.preventDefault();
+    }
+    return false
   }
   if($("[data-word]").val() == "" && $("[data-word]").text() == "" ){
     window.new_word()

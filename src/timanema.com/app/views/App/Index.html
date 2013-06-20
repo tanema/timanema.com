@@ -82,13 +82,14 @@
     </div>
   </form>
   <script>
-    $("#new_word").on("click", function(){window.new_word();});
+    $("#new_word").on("click", function(e){window.new_word(e);});
     $("#clear_signature").on("click", function(){$("canvas").trigger("clear")})
     $(".change_color").on("click", function(){ $("canvas").trigger("change_color", $(this).data("color")) });
     $("canvas").signature("{{.signature.Png}}");
   </script>
 </div>
 
+{{.count}} Signatures
 {{range .signatures}}
   <div class="signature">
     <img src="/signatures/{{.Id.Hex}}">
