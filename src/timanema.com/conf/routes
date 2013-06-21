@@ -6,8 +6,8 @@ module:testrunner
 
 GET     /                                       App.Index
 
-POST    /signatures                             SignatureController.Create
-GET     /signatures/{id}                        SignatureController.Show
+POST    /signatures                             Signature.Create
+GET     /signatures/{id}                        Signature.Show
 
 # Ignore favicon requests
 GET     /favicon.ico                            404

@@ -1,0 +1,18 @@
+{{template "header.html" .}}
+
+<section class="container with_errors">
+  <div id="card">
+    <figure> {{template "Signature/form.html" .}} </figure>
+  </div>
+</section>
+<!--
+<div class="errors_wrapper">
+  <div class="errors">
+    {{range .errors}}
+    <p>
+      {{.Message}}
+    </p>
+    {{end}}
+  </div>
+</div-->
+{{template "footer.html" .}}

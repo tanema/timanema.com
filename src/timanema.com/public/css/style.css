@@ -1,9 +1,95 @@
-#sidebar {
-  padding:25px;
+@font-face {
+  font-family: 'pokemon';
+  src: url('/public/fonts/pokemon.ttf');
+}
+
+@font-face {
+  font-family: 'kulminoituva';
+  src: url('/public/fonts/kulminoituva.ttf');
+}
+
+.container {
+  width: 450px;
+  min-height: 650px;
+  position: relative;
+  margin: 0 auto 40px;
+  -webkit-perspective: 800px;
+  -moz-perspective: 800px;
+  -o-perspective: 800px;
+  perspective: 800px;
+}
+
+#card {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  margin-top: 25px;
+  -webkit-transition: -webkit-transform 1s;
+  -moz-transition: -moz-transform 1s;
+  -o-transition: -o-transform 1s;
+  transition: transform 1s;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -o-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+
+#card.flipped {
+  -webkit-transform: rotateY( 180deg );
+  -moz-transform: rotateY( 180deg );
+  -o-transform: rotateY( 180deg );
+  transform: rotateY( 180deg );
+}
+
+#card figure {
+  text-align:center;
+  display: block;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  border: 1px solid #CCC;
+  background: white;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -o-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+
+#card .front {
+  height: 350px;
+}
+
+#card .back {
+  -webkit-transform: rotateY( 180deg );
+  -moz-transform: rotateY( 180deg );
+  -o-transform: rotateY( 180deg );
+  transform: rotateY( 180deg );
+}
+
+.button_bar {
+  margin-top: 20px;
+}
+
+.error {
+  color: red;
+  font-family: pokemon;
+  font-size: 20px;
+
+}
+
+.with_errors .flip_it {
+  display: none;
+}
+.with_errors #card figure{
+  height: 110%;
 }
 
 h1{
   font-family: impact;
+  margin-bottom: 0;
 }
 
 .subline{
@@ -11,6 +97,13 @@ h1{
   font-style: italic;
   opacity: 0.5;
   font-family: arial, sans-serif;
+  margin-bottom: 10px;
+}
+
+.my_card {
+  text-align: left;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .profile {
@@ -47,9 +140,6 @@ a:hover {
 }
 
 #signature {
-  position: absolute;
-  left: 300px;
-  top: 20px;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -khtml-user-select: none;
@@ -95,7 +185,7 @@ input[type='text']:focus, input[type='email']:focus, input[type='password']:focu
 .canvas_controls {
   position: absolute;
   margin-top: 25px;
-  margin-left: 25px;
+  margin-left: 75px;
 }
 
 .canvas_controls, .word_controls{
@@ -110,7 +200,7 @@ input[type='text']:focus, input[type='email']:focus, input[type='password']:focu
 .word_controls {
   position: absolute;
   margin-top: 380px;
-  margin-left: 95px;
+  margin-left: 165px;
   font-family: impact;
   font-size: 20px;
   background-color: white;
