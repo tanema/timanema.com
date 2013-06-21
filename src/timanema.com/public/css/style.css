@@ -10,13 +10,13 @@
 
 .container {
   width: 450px;
-  min-height: 650px;
+  min-height: 610px;
   position: relative;
   margin: 0 auto 40px;
   -webkit-perspective: 800px;
-  -moz-perspective: 800px;
-  -o-perspective: 800px;
-  perspective: 800px;
+     -moz-perspective: 800px;
+       -o-perspective: 800px;
+          perspective: 800px;
 }
 
 #card {
@@ -25,20 +25,20 @@
   position: absolute;
   margin-top: 25px;
   -webkit-transition: -webkit-transform 1s;
-  -moz-transition: -moz-transform 1s;
-  -o-transition: -o-transform 1s;
-  transition: transform 1s;
+     -moz-transition: -moz-transform 1s;
+       -o-transition: -o-transform 1s;
+          transition: transform 1s;
   -webkit-transform-style: preserve-3d;
-  -moz-transform-style: preserve-3d;
-  -o-transform-style: preserve-3d;
-  transform-style: preserve-3d;
+     -moz-transform-style: preserve-3d;
+       -o-transform-style: preserve-3d;
+          transform-style: preserve-3d;
 }
 
 #card.flipped {
   -webkit-transform: rotateY( 180deg );
-  -moz-transform: rotateY( 180deg );
-  -o-transform: rotateY( 180deg );
-  transform: rotateY( 180deg );
+     -moz-transform: rotateY( 180deg );
+       -o-transform: rotateY( 180deg );
+          transform: rotateY( 180deg );
 }
 
 #card figure {
@@ -50,12 +50,12 @@
   border: 1px solid #CCC;
   background: white;
   -webkit-backface-visibility: hidden;
-  -moz-backface-visibility: hidden;
-  -o-backface-visibility: hidden;
-  backface-visibility: hidden;
+     -moz-backface-visibility: hidden;
+       -o-backface-visibility: hidden;
+          backface-visibility: hidden;
   -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  border-radius: 5px;
+     -moz-border-radius: 5px;
+          border-radius: 5px;
 }
 
 #card .front {
@@ -64,9 +64,9 @@
 
 #card .back {
   -webkit-transform: rotateY( 180deg );
-  -moz-transform: rotateY( 180deg );
-  -o-transform: rotateY( 180deg );
-  transform: rotateY( 180deg );
+     -moz-transform: rotateY( 180deg );
+       -o-transform: rotateY( 180deg );
+          transform: rotateY( 180deg );
 }
 
 .button_bar {
@@ -108,8 +108,8 @@ h1{
 
 .profile {
   -webkit-border-radius: 100px;
-  -moz-border-radius: 100px;
-  border-radius: 100px;
+     -moz-border-radius: 100px;
+          border-radius: 100px;
 }
 
 .icon{
@@ -141,30 +141,35 @@ a:hover {
 
 #signature {
   -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
+    -webkit-user-select: none;
+     -khtml-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
 }
 
 .sig_inputs{
   margin-left: 20px;
 }
 
-.sig_inputs input[type='text'], .sig_inputs input[type='email'],
+.sig_inputs input[type='text'], 
+.sig_inputs input[type='email'],
 .sig_inputs textarea{
   width: 90%;
 }
 
-input[type='text'], input[type='email'], input[type='password'] {
+input[type='text'], 
+input[type='email'], 
+input[type='password'] {
   border: none;
   border-bottom: 3px solid #e6e5e0;
   padding-top: 10px;
   background-color:#FFFFFF;
 }
 
-input[type='text']:focus, input[type='email']:focus, input[type='password']:focus {
+input[type='text']:focus, 
+input[type='email']:focus, 
+input[type='password']:focus {
   outline: none;
 }
 
@@ -188,7 +193,8 @@ input[type='text']:focus, input[type='email']:focus, input[type='password']:focu
   margin-left: 75px;
 }
 
-.canvas_controls, .word_controls{
+.canvas_controls, 
+.word_controls{
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -khtml-user-select: none;
@@ -211,7 +217,8 @@ input[type='text']:focus, input[type='email']:focus, input[type='password']:focu
   background-size: 32px 32px;
 }
 
-.change_color, #clear_signature {
+.change_color, 
+#clear_signature {
   display: inline-block;
   width: 32px;
   height: 32px;
@@ -220,4 +227,3 @@ input[type='text']:focus, input[type='email']:focus, input[type='password']:focu
   -moz-border-radius: 5px;
   border-radius: 5px;
 }
-

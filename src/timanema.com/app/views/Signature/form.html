@@ -26,10 +26,12 @@
       {{with $field := field "signature.Name" .}}
         <input type="text" id="{{$field.Id}}" name="{{$field.Name}}" value="{{$field.Value}}" placeholder="Name"><br/>
       {{end}}
+      <!--
       {{with $field := field "signature.Email" .}}
         <input type="email" id="{{$field.Id}}" name="{{$field.Name}}" value="{{$field.Value}}" placeholder="Email"></br>
         <span class="error">{{$field.Error}}</span>
       {{end}}
+        -->
       {{with $field := field "signature.Comment" .}}
         <textarea id="{{$field.Id}}" name="{{$field.Name}}" value="{{$field.Value}}" placeholder="Comment"></textarea></br>
       {{end}}

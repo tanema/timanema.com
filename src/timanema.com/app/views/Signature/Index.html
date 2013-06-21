@@ -1,9 +1,17 @@
-{{.count}} Signatures
+{{.count}} People have signed my guestbook.
 {{range .signatures}}
-  <div class="signature">
+  <div class="signature_view">
     <img src="/signatures/{{.Id.Hex}}">
-    {{.Word}}
-    {{.Name}}
-    {{.Comment}}
+    <div class="signature_word">{{.Word}}</div>
+    <div class="signature_Name">
+      {{with .Name}}
+        {{.}}
+      {{else}}
+        "anon"
+      {{end}}
+    </div>
+    {{with .Comment}}
+      <div class="signature_comment">{{.}}</div>
+    {{end}}
   </div>
 {{end}}
