@@ -20,3 +20,8 @@
     {{end}}
   </head>
   <body>
+    {{with .flash.success}}
+      <div class="flash">
+        {{.}}
+      </div>
+    {{end}}

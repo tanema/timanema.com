@@ -9,6 +9,7 @@ GET     /                                       App.Index
 GET     /signatures                             Signature.Index
 POST    /signatures                             Signature.Create
 GET     /signatures/{id}                        Signature.Show
+GET     /signatures/{id}/report                 Signature.Report
 
 # Ignore favicon requests
 GET     /favicon.ico                            404

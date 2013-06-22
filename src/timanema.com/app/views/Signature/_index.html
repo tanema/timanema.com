@@ -7,9 +7,10 @@
       </div>
       <img src="/signatures/{{.Id.Hex}}" class="sig_pic">
       <div class="signature_word">{{.Word}}</div>
-      {{with .Comment}}
-        <div class="signature_comment">{{.}}</div>
-      {{end}}
+      <div class="signature_comment">
+        <p> {{.Comment}} </p>
+        <a href="/signatures/{{.Id.Hex}}/report">report</a>
+      </div>
     </div>
   {{else}}
     Why has no one doodled in my guestbook? :(

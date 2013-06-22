@@ -44,3 +44,12 @@ func (c Signature) Show(id string) revel.Result {
   models.Signatures().Find(&s, id)
 	return mimes.Png(s.Png)
 }
+
+func (c Signature) Report(id string) revel.Result {
+  var s models.Signature
+  models.Signatures().Find(&s, id)
+  s.Reported = true
+  s.Save()
+  c.Flash.Success("This image has been reported and will be reviewed shortly.")
+	return c.Redirect(App.Index)
+}

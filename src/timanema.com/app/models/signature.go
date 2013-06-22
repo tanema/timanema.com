@@ -15,6 +15,7 @@ type Signature struct {
   Png         string
   Word        string
   Comment     string
+  Reported    bool
   Created_at  time.Time
 }
 
