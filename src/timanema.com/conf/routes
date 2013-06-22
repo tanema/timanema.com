@@ -6,6 +6,7 @@ module:testrunner
 
 GET     /                                       App.Index
 
+GET     /signatures                             Signature.Index
 POST    /signatures                             Signature.Create
 GET     /signatures/{id}                        Signature.Show
 

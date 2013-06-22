@@ -1,0 +1,48 @@
+<h1>Tim Anema</h1>
+<div class="subline">Always learning.</div>
+
+<table class="my_card">
+  <tr>
+    <td rowspan="6"><img class="profile" src="https://secure.gravatar.com/avatar/0f92713dcfdd83cd560bc9cb4c9eeb6d?s=200"></td>
+  </tr>
+  <tr>
+    <td><div class="email icon"></div></td>
+    <td><a href="mailto:timanema@gmail.com">timanema@gmail.com</a></td>
+  </tr>
+  <tr>
+    <td><div class="twitter icon"></div></td>
+    <td><a href="https://twitter.com/timanema">@timanema</a></td>
+  </tr>
+  <tr>
+    <td><div class="linkedin icon"></div></td>
+    <td><a href="http://ca.linkedin.com/in/timanema">Tim Anema</a></td>
+  </tr>
+  <tr>
+    <td><div class="github icon"></div></td>
+    <td><a href="https://github.com/tanema">tanema</a></td>
+  </tr>
+  <tr>
+    <td><div class="coderwall icon"></div></td>
+    <td>
+      <div id="coderwall_badges">
+          <script type="text/javascript" src="http://coderwall-widget.appspot.com/coderwallbadges.js/tanema"></script>
+          <script> new CoderwallWidget({ 'color':'black', 'backgroundColor':'white', 'width':123, 'height':40 }); </script>
+      </div>
+    </td>
+  </tr>
+</table>
+
+<div class="button_bar">
+  <a class="btn flip_it">Draw in my Guestbook</a>
+</div>
+<script>
+  $(function(){
+    $(".flip_it").on("click", function(e){
+      $(".container").toggleClass("flipped");
+      $("#coderwall_badges").toggle();
+      e.stopPropagation();
+      e.preventDefault();
+      return false;
+    })
+  })
+</script>

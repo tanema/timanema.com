@@ -1,0 +1,17 @@
+<div class="container all_sigs">
+  <p> {{.count}} People have doodled in my guestbook. </p>
+  {{range .signatures}}
+    <div class="signature_view">
+      <div class="signature_name">
+        {{with .Name}} {{.}} {{else}} "Anon" {{end}}
+      </div>
+      <img src="/signatures/{{.Id.Hex}}" class="sig_pic">
+      <div class="signature_word">{{.Word}}</div>
+      {{with .Comment}}
+        <div class="signature_comment">{{.}}</div>
+      {{end}}
+    </div>
+  {{else}}
+    Why has no one doodled in my guestbook? :(
+  {{end}}
+</div>

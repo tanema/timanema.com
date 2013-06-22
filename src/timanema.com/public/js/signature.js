@@ -48,6 +48,7 @@
           canvas.moveTo(get_x(event, is_touch), get_y(event, is_touch))
           canvas.lineTo(get_x(event, is_touch)+1, get_y(event, is_touch)+1)
           canvas.stroke();
+          return stopevent(event);
         }
       }
       function _end(is_touch){
@@ -60,6 +61,7 @@
           }
           canvas.closePath();
           save();
+          return stopevent(event);
         }
       }
       function _move(is_touch){
@@ -67,6 +69,7 @@
           if(is_drawing){
             canvas.lineTo(get_x(event, is_touch), get_y(event, is_touch))
             canvas.stroke();
+            return stopevent(event);
           }
         }
       }
@@ -75,6 +78,11 @@
       }
       function get_y(event, is_touch){
         return (is_touch ? event.targetTouches[0].pageY : event.clientY) / 1 - (canvas_el.offset().top - $(window).scrollTop()) / 1;
+      }
+      function stopevent(e){
+        e.stopPropagation();
+        e.preventDefault();
+        return false;
       }
     })
   };

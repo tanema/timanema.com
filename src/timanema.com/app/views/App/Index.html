@@ -1,15 +1,16 @@
 {{set . "title" "Home"}}
 {{template "header.html" .}}
 
-<section class="container">
+<section class="container flippy_card">
   <div id="card">
-    <figure class="front"> {{template "shared/card.html" .}} </figure>
-    <figure class="back"> {{template "Signature/form.html" .}} </figure>
+    <figure class="front"> {{template "shared/_card.html" .}} </figure>
+    <figure class="back"> {{template "Signature/_form.html" .}} </figure>
   </div>
 </section>
 
-<div class="container all_sigs">
-  {{template "Signature/Index.html" .}}
+{{template "Signature/_index.html" .}}
+<div class="foot_link">
+  <a href="/signatures">See All</a>
 </div>
 
 {{template "footer.html" .}}

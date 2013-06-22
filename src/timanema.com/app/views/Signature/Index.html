@@ -1,17 +1,17 @@
-{{.count}} People have signed my guestbook.
-{{range .signatures}}
-  <div class="signature_view">
-    <img src="/signatures/{{.Id.Hex}}">
-    <div class="signature_word">{{.Word}}</div>
-    <div class="signature_Name">
-      {{with .Name}}
-        {{.}}
-      {{else}}
-        "anon"
-      {{end}}
-    </div>
-    {{with .Comment}}
-      <div class="signature_comment">{{.}}</div>
-    {{end}}
-  </div>
-{{end}}
+{{set . "title" "Signatures"}}
+{{template "header.html" .}}
+{{template "Signature/_index.html" .}}
+<div class="foot_link">
+  {{if eq .prev_page -1}}
+  Prev
+  {{else}}
+  <a href="/signatures?page={{.prev_page}}">Prev</a>
+  {{end}}
+  |{{.page}} of {{.page_count}}|
+  {{with .next_page}}
+  <a href="/signatures?page={{.}}">Next</a>
+  {{else}}
+  Next
+  {{end}}
+</div>
+{{template "footer.html" .}}
