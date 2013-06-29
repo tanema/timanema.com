@@ -6,6 +6,8 @@ import (
   "timanema.com/app/mimes"
   "labix.org/v2/mgo/bson"
   "reflect"
+  "timanema.com/app/mailers"
+  "fmt"
 )
 
 type Signature struct {
@@ -51,5 +53,7 @@ func (c Signature) Report(id string) revel.Result {
   s.Reported = true
   s.Save()
   c.Flash.Success("This image has been reported and will be reviewed shortly.")
+  err := mailers.SendReport(id, []string{"timanema@gmail.com"})
+  fmt.Println(err)
 	return c.Redirect(App.Index)
 }
