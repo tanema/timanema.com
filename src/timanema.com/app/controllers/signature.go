@@ -33,6 +33,7 @@ func (c Signature) Index(signature models.Signature) revel.Result {
   page++
   return c.Render(signatures, count, page, next_page, prev_page, page_count)
 }
+
 func (c Signature) Create(signature models.Signature) revel.Result {
   saved := models.Signatures().Create(&signature, c.Validation)
   if !saved || c.Validation.HasErrors() {
