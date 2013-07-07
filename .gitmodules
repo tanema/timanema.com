@@ -1,0 +1,72 @@
+[submodule "pq"]
+	path = pq
+	url = /Users/tanema/workspace/timanema.com/src/github.com/bmizerany/pq/
+[submodule "gorp"]
+	path = gorp
+	url = /Users/tanema/workspace/timanema.com/src/github.com/coopernurse/gorp/
+[submodule "fsnotify"]
+	path = fsnotify
+	url = /Users/tanema/workspace/timanema.com/src/github.com/howeyc/fsnotify/
+[submodule "go-sqlite3"]
+	path = go-sqlite3
+	url = /Users/tanema/workspace/timanema.com/src/github.com/mattn/go-sqlite3/
+[submodule "oauth"]
+	path = oauth
+	url = /Users/tanema/workspace/timanema.com/src/github.com/mrjones/oauth/
+[submodule "config"]
+	path = config
+	url = /Users/tanema/workspace/timanema.com/src/github.com/robfig/config/
+[submodule "cron"]
+	path = cron
+	url = /Users/tanema/workspace/timanema.com/src/github.com/robfig/cron/
+[submodule "go-cache"]
+	path = go-cache
+	url = /Users/tanema/workspace/timanema.com/src/github.com/robfig/go-cache/
+[submodule "goauth2"]
+	path = goauth2
+	url = /Users/tanema/workspace/timanema.com/src/github.com/robfig/goauth2/
+[submodule "gomemcache"]
+	path = gomemcache
+	url = /Users/tanema/workspace/timanema.com/src/github.com/robfig/gomemcache/
+[submodule "pathtree"]
+	path = pathtree
+	url = /Users/tanema/workspace/timanema.com/src/github.com/robfig/pathtree/
+[submodule "revel"]
+	path = revel
+	url = /Users/tanema/workspace/timanema.com/src/github.com/robfig/revel/
+[submodule "go-eval"]
+	path = go-eval
+	url = /Users/tanema/workspace/timanema.com/src/github.com/sbinet/go-eval/
+[submodule "go-terminal"]
+	path = go-terminal
+	url = /Users/tanema/workspace/timanema.com/src/github.com/sbinet/go-terminal/
+[submodule "go-types"]
+	path = go-types
+	url = /Users/tanema/workspace/timanema.com/src/github.com/sbinet/go-types/
+[submodule "simpleuuid"]
+	path = simpleuuid
+	url = /Users/tanema/workspace/timanema.com/src/github.com/streadway/simpleuuid/
+[submodule "mgorx"]
+	path = mgorx
+	url = /Users/tanema/workspace/timanema.com/src/github.com/tanema/mgorx/
+[submodule "revel_mailer"]
+	path = revel_mailer
+	url = /Users/tanema/workspace/timanema.com/src/github.com/tanema/revel_mailer/
+[submodule "/Users/tanema/workspace/timanema.com/src/github.com/mrjones/oauth"]
+	path = /Users/tanema/workspace/timanema.com/src/github.com/mrjones/oauth
+	url = /Users/tanema/workspace/timanema.com/src/github.com/mrjones/oauth/
+[submodule "/Users/tanema/workspace/timanema.com/src/github.com/robfig/cron"]
+	path = /Users/tanema/workspace/timanema.com/src/github.com/robfig/cron
+	url = /Users/tanema/workspace/timanema.com/src/github.com/robfig/cron/
+[submodule "/Users/tanema/workspace/timanema.com/src/github.com/robfig/go-cache"]
+	path = /Users/tanema/workspace/timanema.com/src/github.com/robfig/go-cache
+	url = /Users/tanema/workspace/timanema.com/src/github.com/robfig/go-cache/
+[submodule "/Users/tanema/workspace/timanema.com/src/github.com/robfig/goauth2"]
+	path = /Users/tanema/workspace/timanema.com/src/github.com/robfig/goauth2
+	url = /Users/tanema/workspace/timanema.com/src/github.com/robfig/goauth2/
+[submodule "/Users/tanema/workspace/timanema.com/src/github.com/robfig/gomemcache"]
+	path = /Users/tanema/workspace/timanema.com/src/github.com/robfig/gomemcache
+	url = /Users/tanema/workspace/timanema.com/src/github.com/robfig/gomemcache/
+[submodule "/Users/tanema/workspace/timanema.com/src/github.com/robfig/pathtree"]
+	path = /Users/tanema/workspace/timanema.com/src/github.com/robfig/pathtree
+	url = /Users/tanema/workspace/timanema.com/src/github.com/robfig/pathtree/

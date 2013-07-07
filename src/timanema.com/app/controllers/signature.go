@@ -5,7 +5,6 @@ import (
   "timanema.com/app/models"
   "timanema.com/app/mimes"
   "labix.org/v2/mgo/bson"
-  "reflect"
   "timanema.com/app/mailers"
   "fmt"
 )
@@ -16,8 +15,9 @@ type Signature struct {
 
 func (c Signature) Index(signature models.Signature) revel.Result {
   limit := 5
+  page := 0
+  c.Params.Bind(page, "page")
   signatures := []models.Signature{}
-  page := int(c.Params.Bind("page", reflect.TypeOf(0)).Int())
   models.Signatures().All(&signatures, bson.M{"order": "-_id","limit": limit, "skip": page*limit})
   count, _ := models.Signatures().Count(nil)
   var next_page, prev_page int
