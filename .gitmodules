@@ -1,6 +1,6 @@
 [submodule "pq"]
 	path = pq
-	url = /Users/tanema/workspace/timanema.com/src/github.com/bmizerany/pq/
+	url = /Users/tanema/workspace/timanema.com/src/github.com/bmizerany/pq
 [submodule "gorp"]
 	path = gorp
 	url = /Users/tanema/workspace/timanema.com/src/github.com/coopernurse/gorp/

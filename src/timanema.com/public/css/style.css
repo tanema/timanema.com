@@ -240,8 +240,8 @@ input[type='password']:focus {
   height: 32px;
   border: thin solid gray;
   -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  border-radius: 5px;
+     -moz-border-radius: 5px;
+          border-radius: 5px;
 }
 
 .foot_link {
@@ -281,6 +281,13 @@ input[type='password']:focus {
   text-align: center;
 }
 
+.signature_word_inner, .signature_name_inner{
+  background-color: white;
+  -webkit-border-radius: 10px;
+     -moz-border-radius: 10px;
+          border-radius: 10px;
+}
+
 .signature_comment { 
   position: relative;
   top: -20px;
@@ -295,7 +302,9 @@ input[type='password']:focus {
   background-color: green;
   padding: 5px;
   color: white;
-  border-radius: 5px;
+  -webkit-border-radius: 5px;
+     -moz-border-radius: 5px;
+          border-radius: 5px;
   margin-top: 5px;
   width: 30%;
 }

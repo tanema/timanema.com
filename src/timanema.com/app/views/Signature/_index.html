@@ -3,10 +3,16 @@
   {{range .signatures}}
     <div class="signature_view">
       <div class="signature_name">
-        {{with .Name}} {{.}} {{else}} "Anon" {{end}}
+        <span class="signature_name_inner">
+          {{with .Name}} {{.}} {{else}} "Anon" {{end}}
+        </span>
       </div>
       <img src="/signatures/{{.Id.Hex}}" class="sig_pic">
-      <div class="signature_word">{{.Word}}</div>
+      <div class="signature_word">
+        <span class="signature_word_inner">
+          {{.Word}}
+        </span>
+      </div>
       <div class="signature_comment">
         <p> {{.Comment}} </p>
         <a href="/signatures/{{.Id.Hex}}/report">report</a>

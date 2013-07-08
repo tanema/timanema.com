@@ -16,7 +16,7 @@ type Signature struct {
 func (c Signature) Index(signature models.Signature) revel.Result {
   limit := 5
   page := 0
-  c.Params.Bind(page, "page")
+  c.Params.Bind(&page, "page")
   signatures := []models.Signature{}
   models.Signatures().All(&signatures, bson.M{"order": "-_id","limit": limit, "skip": page*limit})
   count, _ := models.Signatures().Count(nil)
