@@ -103,3 +103,57 @@
 [submodule "./src/github.com/tanema/revel_mailer"]
 	path = ./src/github.com/tanema/revel_mailer
 	url = ./src/github.com/tanema/revel_mailer
+[submodule "src/github.com/bmizerany/pq"]
+	path = src/github.com/bmizerany/pq
+	url = https://github.com/bmizerany/pq
+[submodule "src/github.com/coopernurse/gorp"]
+	path = src/github.com/coopernurse/gorp
+	url = https://github.com/coopernurse/gorp
+[submodule "src/github.com/howeyc/fsnotify"]
+	path = src/github.com/howeyc/fsnotify
+	url = https://github.com/howeyc/fsnotify
+[submodule "src/github.com/mattn/go-sqlite3"]
+	path = src/github.com/mattn/go-sqlite3
+	url = https://github.com/mattn/go-sqlite3
+[submodule "src/github.com/mrjones/oauth"]
+	path = src/github.com/mrjones/oauth
+	url = https://github.com/mrjones/oauth
+[submodule "src/github.com/robfig/config"]
+	path = src/github.com/robfig/config
+	url = https://github.com/robfig/config
+[submodule "src/github.com/robfig/cron"]
+	path = src/github.com/robfig/cron
+	url = https://github.com/robfig/cron
+[submodule "src/github.com/robfig/go-cache"]
+	path = src/github.com/robfig/go-cache
+	url = https://github.com/robfig/go-cache
+[submodule "src/github.com/robfig/goauth2"]
+	path = src/github.com/robfig/goauth2
+	url = https://github.com/robfig/goauth2
+[submodule "src/github.com/robfig/gomemcache"]
+	path = src/github.com/robfig/gomemcache
+	url = https://github.com/robfig/gomemcache
+[submodule "src/github.com/robfig/pathtree"]
+	path = src/github.com/robfig/pathtree
+	url = https://github.com/robfig/pathtree
+[submodule "src/github.com/robfig/revel"]
+	path = src/github.com/robfig/revel
+	url = https://github.com/robfig/revel
+[submodule "src/github.com/sbinet/go-eval"]
+	path = src/github.com/sbinet/go-eval
+	url = https://github.com/sbinet/go-eval
+[submodule "src/github.com/sbinet/go-terminal"]
+	path = src/github.com/sbinet/go-terminal
+	url = https://github.com/sbinet/go-terminal
+[submodule "src/github.com/sbinet/go-types"]
+	path = src/github.com/sbinet/go-types
+	url = https://github.com/sbinet/go-types
+[submodule "src/github.com/streadway/simpleuuid"]
+	path = src/github.com/streadway/simpleuuid
+	url = https://github.com/streadway/simpleuuid
+[submodule "src/github.com/tanema/mgorx"]
+	path = src/github.com/tanema/mgorx
+	url = https://github.com/tanema/mgorx
+[submodule "src/github.com/tanema/revel_mailer"]
+	path = src/github.com/tanema/revel_mailer
+	url = https://github.com/tanema/revel_mailer
