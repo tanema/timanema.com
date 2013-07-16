@@ -1,1 +1,3 @@
-this is the tet body this is the ID {{.reported_id}}
+Tim!
+An image has been reported!
+timanema.com/signatures/{{.reported_id}}

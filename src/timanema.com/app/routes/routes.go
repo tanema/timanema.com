@@ -21,11 +21,9 @@ var Signature tSignature
 
 
 func (p tSignature) Index(
-		signature interface{},
 		) string {
 	args := make(map[string]string)
 	
-	revel.Unbind(args, "signature", signature)
 	return revel.MainRouter.Reverse("Signature.Index", args).Url
 }
 

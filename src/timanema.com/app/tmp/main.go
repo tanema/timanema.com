@@ -52,7 +52,6 @@ func main() {
 			&revel.MethodType{
 				Name: "Index",
 				Args: []*revel.MethodArg{ 
-					&revel.MethodArg{Name: "signature", Type: reflect.TypeOf((*models.Signature)(nil)) },
 				},
 				RenderArgNames: map[int][]string{ 
 					34: []string{ 
@@ -156,6 +155,7 @@ func main() {
 	revel.DefaultValidationKeys = map[string]map[int]string{ 
 		"timanema.com/app/models.(*Signature).Validate": { 
 			28: "signature.Png",
+			29: "signature.Word",
 		},
 	}
 	revel.TestSuites = []interface{}{ 

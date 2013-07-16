@@ -6,22 +6,22 @@ import (
   "timanema.com/app/mimes"
   "labix.org/v2/mgo/bson"
   "timanema.com/app/mailers"
-  "fmt"
+  "math"
 )
 
 type Signature struct {
 	*revel.Controller
 }
 
-func (c Signature) Index(signature models.Signature) revel.Result {
-  limit := 5
+func (c Signature) Index() revel.Result {
+  limit := 10
   page := 0
   c.Params.Bind(&page, "page")
   signatures := []models.Signature{}
   models.Signatures().All(&signatures, bson.M{"order": "-_id","limit": limit, "skip": page*limit})
   count, _ := models.Signatures().Count(nil)
   var next_page, prev_page int
-  page_count := (count / limit)
+  page_count := int(math.Ceil(float64(count / limit))) + 1
   if page * limit < page_count - 1 {
     next_page = page + 1
   }
@@ -53,8 +53,11 @@ func (c Signature) Report(id string) revel.Result {
   models.Signatures().Find(&s, id)
   s.Reported = true
   s.Save()
-  c.Flash.Success("This image has been reported and will be reviewed shortly.")
   err := mailers.UserMailer{}.SendReport(id)
-  fmt.Println(err)
+  if err != nil {
+    c.Flash.Error("There was a problem reporting this image.")
+  } else {
+    c.Flash.Success("This image has been reported and will be reviewed shortly.")
+  }
 	return c.Redirect(App.Index)
 }

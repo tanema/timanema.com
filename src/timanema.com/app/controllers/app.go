@@ -12,7 +12,7 @@ type App struct {
 
 func (c App) Index() revel.Result {
   signatures := []models.Signature{}
-  models.Signatures().All(&signatures, bson.M{"order": "-_id", "limit": 10})
+  models.Signatures().All(&signatures, bson.M{"order": "-_id", "limit": 5})
   count, _ := models.Signatures().Count(nil)
 	return c.Render(signatures, count)
 }
