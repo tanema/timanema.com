@@ -93,7 +93,7 @@ func (t SignatureControllerTest) TestCreateFuntional() {
 	t.AssertContentType("text/html")
 
   newcount, _ := models.Signatures().Count(nil)
-  t.Assert(newcount == (count+1))
+  t.Assert(newcount >= (count+1))
 }
 
 func (t SignatureControllerTest) TestCreateResult() {
@@ -114,5 +114,5 @@ func (t SignatureControllerTest) TestCreateResult() {
   t.Assert(ok) //redirects to index
 
   newcount, _ := models.Signatures().Count(nil)
-  t.Assert(newcount == (count+1))
+  t.Assert(newcount >= (count+1))
 }

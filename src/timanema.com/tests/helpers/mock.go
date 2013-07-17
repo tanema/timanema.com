@@ -8,7 +8,7 @@ import (
 
 func MockController(controller, action string) *revel.Controller {
   c :=  &revel.Controller{
-    Request:  buildEmptyRequest(),
+    Request:  BuildEmptyRequest(),
     Response: revel.NewResponse(httptest.NewRecorder()),
     Params:   new(revel.Params),
     Args:     map[string]interface{}{},
@@ -25,7 +25,7 @@ func MockController(controller, action string) *revel.Controller {
   return c
 }
 
-func buildEmptyRequest() *revel.Request {
+func BuildEmptyRequest() *revel.Request {
   httpRequest, _ := http.NewRequest("GET", "/", nil)
   request := revel.NewRequest(httpRequest)
   return request
