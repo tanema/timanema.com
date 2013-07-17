@@ -6,13 +6,9 @@ import (
 	"reflect"
 	"github.com/robfig/revel"
 	controllers0 "github.com/robfig/revel/modules/static/app/controllers"
-	_ "github.com/robfig/revel/modules/testrunner/app"
-	controllers1 "github.com/robfig/revel/modules/testrunner/app/controllers"
+	_ "timanema.com/app"
 	controllers "timanema.com/app/controllers"
 	models "timanema.com/app/models"
-	tests "timanema.com/tests/controllers"
-	tests0 "timanema.com/tests/mimes"
-	tests1 "timanema.com/tests/models"
 )
 
 var (
@@ -117,40 +113,6 @@ func main() {
 			
 		})
 	
-	revel.RegisterController((*controllers1.TestRunner)(nil),
-		[]*revel.MethodType{
-			&revel.MethodType{
-				Name: "Index",
-				Args: []*revel.MethodArg{ 
-				},
-				RenderArgNames: map[int][]string{ 
-					46: []string{ 
-						"testSuites",
-					},
-				},
-			},
-			&revel.MethodType{
-				Name: "Run",
-				Args: []*revel.MethodArg{ 
-					&revel.MethodArg{Name: "suite", Type: reflect.TypeOf((*string)(nil)) },
-					&revel.MethodArg{Name: "test", Type: reflect.TypeOf((*string)(nil)) },
-				},
-				RenderArgNames: map[int][]string{ 
-					69: []string{ 
-						"error",
-					},
-				},
-			},
-			&revel.MethodType{
-				Name: "List",
-				Args: []*revel.MethodArg{ 
-				},
-				RenderArgNames: map[int][]string{ 
-				},
-			},
-			
-		})
-	
 	revel.DefaultValidationKeys = map[string]map[int]string{ 
 		"timanema.com/app/models.(*Signature).Validate": { 
 			28: "signature.Png",
@@ -158,10 +120,6 @@ func main() {
 		},
 	}
 	revel.TestSuites = []interface{}{ 
-		(*tests.AppControllerTest)(nil),
-		(*tests.SignatureControllerTest)(nil),
-		(*tests0.PngMimeTest)(nil),
-		(*tests1.SignatureModelTest)(nil),
 	}
 
 	revel.Run(*port)

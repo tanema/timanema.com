@@ -8,7 +8,7 @@ type tApp struct {}
 var App tApp
 
 
-func (p tApp) Index(
+func (_ tApp) Index(
 		) string {
 	args := make(map[string]string)
 	
@@ -20,14 +20,14 @@ type tSignature struct {}
 var Signature tSignature
 
 
-func (p tSignature) Index(
+func (_ tSignature) Index(
 		) string {
 	args := make(map[string]string)
 	
 	return revel.MainRouter.Reverse("Signature.Index", args).Url
 }
 
-func (p tSignature) Create(
+func (_ tSignature) Create(
 		signature interface{},
 		) string {
 	args := make(map[string]string)
@@ -36,7 +36,7 @@ func (p tSignature) Create(
 	return revel.MainRouter.Reverse("Signature.Create", args).Url
 }
 
-func (p tSignature) Show(
+func (_ tSignature) Show(
 		id string,
 		) string {
 	args := make(map[string]string)
@@ -45,7 +45,7 @@ func (p tSignature) Show(
 	return revel.MainRouter.Reverse("Signature.Show", args).Url
 }
 
-func (p tSignature) Report(
+func (_ tSignature) Report(
 		id string,
 		) string {
 	args := make(map[string]string)
@@ -59,7 +59,7 @@ type tStatic struct {}
 var Static tStatic
 
 
-func (p tStatic) Serve(
+func (_ tStatic) Serve(
 		prefix string,
 		filepath string,
 		) string {
@@ -70,7 +70,7 @@ func (p tStatic) Serve(
 	return revel.MainRouter.Reverse("Static.Serve", args).Url
 }
 
-func (p tStatic) ServeModule(
+func (_ tStatic) ServeModule(
 		moduleName string,
 		prefix string,
 		filepath string,
@@ -81,36 +81,6 @@ func (p tStatic) ServeModule(
 	revel.Unbind(args, "prefix", prefix)
 	revel.Unbind(args, "filepath", filepath)
 	return revel.MainRouter.Reverse("Static.ServeModule", args).Url
-}
-
-
-type tTestRunner struct {}
-var TestRunner tTestRunner
-
-
-func (p tTestRunner) Index(
-		) string {
-	args := make(map[string]string)
-	
-	return revel.MainRouter.Reverse("TestRunner.Index", args).Url
-}
-
-func (p tTestRunner) Run(
-		suite string,
-		test string,
-		) string {
-	args := make(map[string]string)
-	
-	revel.Unbind(args, "suite", suite)
-	revel.Unbind(args, "test", test)
-	return revel.MainRouter.Reverse("TestRunner.Run", args).Url
-}
-
-func (p tTestRunner) List(
-		) string {
-	args := make(map[string]string)
-	
-	return revel.MainRouter.Reverse("TestRunner.List", args).Url
 }
 
 
