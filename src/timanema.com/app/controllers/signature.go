@@ -56,6 +56,7 @@ func (c Signature) Report(id string) revel.Result {
   err := mailers.UserMailer{}.SendReport(id)
   if err != nil {
     c.Flash.Error("There was a problem reporting this image.")
+    revel.ERROR.Println(err)
   } else {
     c.Flash.Success("This image has been reported and will be reviewed shortly.")
   }
