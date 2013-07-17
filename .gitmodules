@@ -157,3 +157,6 @@
 [submodule "src/github.com/tanema/revel_mailer"]
 	path = src/github.com/tanema/revel_mailer
 	url = https://github.com/tanema/revel_mailer
+[submodule "src/github.com/tanema/revel_mock"]
+	path = src/github.com/tanema/revel_mock
+	url = https://github.com/tanema/revel_mock

@@ -2,8 +2,8 @@ package tests
 
 import (
   "github.com/robfig/revel"
+  "github.com/tanema/revel_mock"
   "timanema.com/app/controllers"
-  "timanema.com/tests/helpers"
   "timanema.com/app/models"
   "labix.org/v2/mgo/bson"
   "reflect"
@@ -23,7 +23,7 @@ func (t AppControllerTest) TestIndexFunctional() {
 }
 
 func (t AppControllerTest) TestIndexResult() { 
-  result, ok := (controllers.App{helpers.MockController("App","Index")}.Index()).(*revel.RenderTemplateResult)
+  result, ok := (controllers.App{revel_mock.MockController("App","Index")}.Index()).(*revel.RenderTemplateResult)
   t.Assert(ok) //succeeded rendering
 
   signatures := []models.Signature{}

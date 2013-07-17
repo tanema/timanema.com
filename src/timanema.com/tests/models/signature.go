@@ -2,7 +2,7 @@ package tests
 
 import (
   "github.com/robfig/revel"
-  "timanema.com/tests/helpers"
+  "github.com/tanema/revel_mock"
   "timanema.com/app/models"
 )
 
@@ -13,7 +13,7 @@ type SignatureModelTest struct {
 }
 
 func (t *SignatureModelTest) Before() {
-  t.c = helpers.MockController("","")
+  t.c = revel_mock.MockController("","")
   t.s = models.Signature{
           Name: "Test Name",
           Word: "word",

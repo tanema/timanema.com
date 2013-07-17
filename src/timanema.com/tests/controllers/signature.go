@@ -4,7 +4,7 @@ import (
   "github.com/robfig/revel"
   "timanema.com/app/controllers"
   "timanema.com/app/mimes"
-  "timanema.com/tests/helpers"
+  "github.com/tanema/revel_mock"
   "timanema.com/app/models"
   "labix.org/v2/mgo/bson"
   "net/url"
@@ -25,7 +25,7 @@ func (t SignatureControllerTest) TestIndexFunctional() {
 }
 
 func (t SignatureControllerTest) TestIndexResult() {
-  result, ok := (controllers.Signature{helpers.MockController("Signature","Index")}.Index()).(*revel.RenderTemplateResult)
+  result, ok := (controllers.Signature{revel_mock.MockController("Signature","Index")}.Index()).(*revel.RenderTemplateResult)
   t.Assert(ok) //succeeded rendering
 
   signatures := []models.Signature{}
@@ -48,7 +48,7 @@ func (t SignatureControllerTest) TestShowResult() {
   signatures := []models.Signature{}
   models.Signatures().All(&signatures, nil)
 
-  result, ok := (controllers.Signature{helpers.MockController("Signature","Show")}.Show(signatures[0].Id.Hex())).(mimes.Png)
+  result, ok := (controllers.Signature{revel_mock.MockController("Signature","Show")}.Show(signatures[0].Id.Hex())).(mimes.Png)
   t.Assert(ok) //succeeded rendering
 
   t.Assert(string(result) == signatures[0].Png)
@@ -68,7 +68,7 @@ func (t SignatureControllerTest) TestReportResult() {
   signatures[0].Reported = false
   signatures[0].Save()
 
-  c := controllers.Signature{helpers.MockController("Signature","Report")}
+  c := controllers.Signature{revel_mock.MockController("Signature","Report")}
   _, ok := (c.Report(signatures[0].Id.Hex())).(*revel.RedirectToActionResult)
   t.Assert(ok) //succeeded redirecting
 
@@ -106,7 +106,7 @@ func (t SignatureControllerTest) TestCreateResult() {
   }
   invalid_sig := models.Signature{}
 
-  c := controllers.Signature{helpers.MockController("Signature","Create")}
+  c := controllers.Signature{revel_mock.MockController("Signature","Create")}
   _, ok := (c.Create(invalid_sig)).(*revel.RenderTemplateResult)
   t.Assert(ok) //re renders form to correct issues
   c.Validation = &revel.Validation{}

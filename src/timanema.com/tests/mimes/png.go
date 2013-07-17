@@ -3,7 +3,7 @@ package tests
 import (
   "github.com/robfig/revel"
   "timanema.com/app/mimes"
-  "timanema.com/tests/helpers"
+  "github.com/tanema/revel_mock"
   "net/http/httptest"
   "encoding/base64"
   "strings"
@@ -19,7 +19,7 @@ func (t PngMimeTest) After() { }
 
 func (t PngMimeTest) TestApply() {
   test_string := "data blah, this is a test string that will be made into a png"
-  req := helpers.BuildEmptyRequest()
+  req := revel_mock.BuildEmptyRequest()
   resp := httptest.NewRecorder()
   mimes.Png(test_string).Apply(req, revel.NewResponse(resp))
   data := strings.Split(test_string, ",")
