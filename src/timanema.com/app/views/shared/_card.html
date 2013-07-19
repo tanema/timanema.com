@@ -39,7 +39,9 @@
   $(function(){
     $(".flip_it").on("click", function(e){
       $(".container").toggleClass("flipped");
-      $("#coderwall_badges").toggle();
+      setTimeout(function(){
+        $(".my_card").toggle();
+      }, 500);
       e.stopPropagation();
       e.preventDefault();
       return false;

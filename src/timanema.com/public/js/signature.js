@@ -11,6 +11,7 @@
 
       canvas_el.get(0).addEventListener('touchstart', _start(true));
       canvas_el.get(0).addEventListener('touchend', _end(true));
+      canvas_el.get(0).addEventListener('touchcancel', _end(true));
       canvas_el.get(0).addEventListener('touchmove', _move(true));
       canvas_el.on('mousedown', _start())
       canvas_el.on('mouseup', _end())
@@ -36,7 +37,6 @@
       
       function save(clear){
         data = clear ? "" : canvas_el.get(0).toDataURL('image/png')
-        canvas_el.attr("data-png", data);
         $("[data-behaviour='canvas_save']").val(data);
       }
 
@@ -69,6 +69,7 @@
           if(is_drawing){
             canvas.lineTo(get_x(event, is_touch), get_y(event, is_touch))
             canvas.stroke();
+            save();//hack for mobile browsers since they dont like touch end
             return stopevent(event);
           }
         }
