@@ -2,7 +2,7 @@
 
 <html>
   <head>
-    <title>{{.title}}</title>
+    <title>Tim!</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <link href="http://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet" type="text/css">
     <link rel="stylesheet" type="text/css" href="/public/css/normalize.css">
@@ -18,6 +18,28 @@
     {{range .moreScripts}}
       <script src="/public/{{.}}" type="text/javascript" charset="utf-8"></script>
     {{end}}
+
+    <!-- for Google -->
+    <meta name="description" content="Tim anema, a software developer" />
+    <meta name="keywords" content="Tim tim Anema anema" />
+
+    <meta name="author" content="Tim Anema" />
+    <meta name="copyright" content="timanema.com @ 2013" />
+    <meta name="application-name" content="timanema.com" />
+
+    <!-- for Facebook -->          
+    <meta property="og:title" content="Timanema.com" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://secure.gravatar.com/avatar/0f92713dcfdd83cd560bc9cb4c9eeb6d?s=200" />
+    <meta property="og:url" content="www.timanema.com" />
+    <meta property="og:description" content="Tim Anema! Come Check ME Out!" />
+
+    <!-- for Twitter -->          
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Tim Anema!" />
+    <meta name="twitter:description" content="Tim Anema! Come Check ME Out!" />
+    <meta name="twitter:image" content="https://secure.gravatar.com/avatar/0f92713dcfdd83cd560bc9cb4c9eeb6d?s=200" />
+
   </head>
   <body>
     {{with .flash.success}}

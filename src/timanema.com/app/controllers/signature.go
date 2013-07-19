@@ -22,7 +22,7 @@ func (c Signature) Index() revel.Result {
   count, _ := models.Signatures().Count(nil)
   var next_page, prev_page int
   page_count := int(math.Ceil(float64(count / limit))) + 1
-  if page * limit < page_count - 1 {
+  if page  < page_count - 1 {
     next_page = page + 1
   }
   if page > 0 {
