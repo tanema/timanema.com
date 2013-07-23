@@ -66,7 +66,7 @@ func (t SignatureControllerTest) TestReportResult() {
   signatures := []models.Signature{}
   models.Signatures().All(&signatures, nil)
   signatures[0].Reported = false
-  signatures[0].Save()
+  signatures[0].Save(nil)
 
   c := controllers.Signature{revel_mock.MockController("Signature","Report")}
   _, ok := (c.Report(signatures[0].Id.Hex())).(*revel.RedirectToActionResult)

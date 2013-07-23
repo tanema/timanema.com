@@ -52,7 +52,7 @@ func (c Signature) Report(id string) revel.Result {
   var s models.Signature
   models.Signatures().Find(&s, id)
   s.Reported = true
-  s.Save()
+  s.Save(nil)
   err := mailers.UserMailer{}.SendReport(id)
   if err != nil {
     c.Flash.Error("There was a problem reporting this image.")
